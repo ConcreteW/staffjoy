@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
   account-service:
-    build: ./account-svc
-    image: boboweike/account-svc
+    build: ./account-svc # docker file 路径
+    image: boboweike/account-svc # build 镜像名
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT

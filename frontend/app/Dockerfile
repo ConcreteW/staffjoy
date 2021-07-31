@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:14.17.4-alpine3.14 as builder
 WORKDIR '/build'
 COPY app ./app
 COPY resources ./resources

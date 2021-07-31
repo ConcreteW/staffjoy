@@ -3,6 +3,12 @@
 账户开通邮件方式：  http://www.staffjoy-v2.local/activate/{sign}
 xyz.staffjoy.common.crypto.Sign.generateEmailConfirmationToken() 生成签名，这样可以绕过阿里邮箱接收链接
 
+##docker compose
+开发环境本地测试用
+docker compose build 
+docker compose up
+
+
 # Staffjoy 教学版
 
 微服务和云原生架构教学案例项目，基于 Spring Boot 和 Kubernetes 技术栈
