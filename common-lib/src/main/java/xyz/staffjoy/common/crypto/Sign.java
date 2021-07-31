@@ -83,4 +83,10 @@ public class Sign {
         return token;
     }
 
+    public static void main(String[] args) {
+        String secret = generateEmailConfirmationToken("4028b8817afb5f3c017afba717eb0001", "renshishi@qq.com", "secret");
+        System.out.printf(secret);
+
+    }
+
 }

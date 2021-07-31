@@ -7,6 +7,8 @@ var bundleName = "bundle-" + hash + ".js";
 
 // for cleaning up old files upon building
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+var webpack = require('webpack');
+
 
 
 module.exports = {
@@ -102,6 +104,9 @@ module.exports = {
         }),
         new WebpackCleanupPlugin({
             exclude: ["README.md", "assets/**/*"],
+        }),
+        new webpack.ProvidePlugin({
+            $: 'zepto-webpack'
         })
     ]
 };

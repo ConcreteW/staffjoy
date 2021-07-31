@@ -1,3 +1,5 @@
+启动顺序 mail -> bot -> account -> company -> whoami -> website ->  farady(网关)
+
 # Staffjoy 教学版
 
 微服务和云原生架构教学案例项目，基于 Spring Boot 和 Kubernetes 技术栈
