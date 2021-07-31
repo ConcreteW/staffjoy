@@ -1,4 +1,7 @@
 启动顺序 mail -> bot -> account -> company -> whoami -> website ->  faraday(网关)
+访问 http://www.staffjoy-v2.local/
+账户开通邮件方式：  http://www.staffjoy-v2.local/activate/{sign}
+xyz.staffjoy.common.crypto.Sign.generateEmailConfirmationToken() 生成签名，这样可以绕过阿里邮箱接收链接
 
 # Staffjoy 教学版
 
