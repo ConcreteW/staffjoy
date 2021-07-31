@@ -1,4 +1,4 @@
-启动顺序 mail -> bot -> account -> company -> whoami -> website ->  farady(网关)
+启动顺序 mail -> bot -> account -> company -> whoami -> website ->  faraday(网关)
 
 # Staffjoy 教学版
 
