@@ -8,6 +8,31 @@ xyz.staffjoy.common.crypto.Sign.generateEmailConfirmationToken() 生成签名，
 docker compose build 
 docker compose up
 
+## k8s dashboard
+1.添加用户组
+
+```
+kubectl apply -f kubedashboard-account.yaml
+
+```
+windows 下分两部，mac下可用 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+2.user = kubectl -n kube-system get secret | grep admin-user | awk '{print $1}'
+3.kubectl -n kube-system describe secret ${user}
+4. 无权限  kubectl create clusterrolebinding test:anonymous --clusterrole=cluster-admin --user=system:anonymous
+
+## k8s 发布
+
+1. 发布配置 kubectl.exe apply -f .\config\
+2. 发布pod
+  问题： no matches for kind "Deployment" in version "extensions/v1beta1"
+  高级版本k8s 已经不是beta版本了， 查看支持的版本： kubectl api-versions | grep -i apps ；
+  替换yaml 文件中deployment 的版本为apps/v1 
+  添加selector(apps/v1要求)
+3. 添加端口转发到网关
+   kubectl get pods 找到网关pod名
+   kubectl port-forward faraday-svc-deployment-5789944787-k65rn 80:80
+4. 登录验证 http://app.staffjoy-v2.local  
+
 
 # Staffjoy 教学版
 

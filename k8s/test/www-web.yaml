@@ -1,14 +1,17 @@
 # https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-apiversion-definition-guide.html
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: www-web-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: www-web-deployment
   template:
     metadata:
       labels:
-        app: www-svc
+        app: www-web-deployment
         env: test
     spec:
       containers:
@@ -28,7 +31,7 @@ metadata:
   name: www-service
 spec:
   selector:
-    app: www-svc
+    app: www-web-deployment
     env: test
   ports:
     - protocol: TCP

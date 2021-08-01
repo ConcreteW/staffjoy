@@ -1,14 +1,17 @@
 # https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-apiversion-definition-guide.html
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: email-svc-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: email-svc-deployment
   template:
     metadata:
       labels:
-        app: email-svc
+        app: email-svc-deployment
         env: test
     spec:
       containers:
@@ -28,7 +31,7 @@ metadata:
   name: email-service
 spec:
   selector:
-    app: email-svc
+    app: email-svc-deployment
     env: test
   ports:
     - protocol: TCP
